@@ -13,6 +13,7 @@
       line-height: 1.9;
       color: #2d2d2d;
       background: #f5f7fa;
+      word-break: keep-all;
     }
 
     .page-wrapper {
@@ -90,12 +91,13 @@
     p { margin-bottom: 10px; color: #374151; }
 
     ol.main-list { list-style: none; padding-left: 0; margin-bottom: 10px; }
-    ol.main-list > li { display: flex; gap: 8px; margin-bottom: 8px; color: #374151; }
-    ol.main-list > li .num { flex-shrink: 0; font-weight: 600; color: #374151; min-width: 20px; }
+    ol.main-list > li { position: relative; padding-left: 28px; margin-bottom: 8px; color: #374151; }
+    ol.main-list > li .num { position: absolute; left: 0; top: 0; font-weight: 600; color: #374151; }
+    ol.main-list > li > span:not(.num) { display: block; }
 
     ul.plain-list { list-style: none; padding-left: 0; margin-bottom: 10px; }
-    ul.plain-list > li { display: flex; gap: 8px; margin-bottom: 6px; color: #374151; }
-    ul.plain-list > li::before { content: "-"; flex-shrink: 0; color: #6b7280; }
+    ul.plain-list > li { position: relative; padding-left: 16px; margin-bottom: 6px; color: #374151; }
+    ul.plain-list > li::before { content: "-"; position: absolute; left: 0; color: #6b7280; }
 
     table.info-table {
       width: 100%;
